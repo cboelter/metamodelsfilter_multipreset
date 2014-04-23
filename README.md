@@ -1,4 +1,4 @@
 metamodelsfilter_multipreset
 ============================
 
-A multipreset filter for metamodels
+A multi preset filter for metamodels
