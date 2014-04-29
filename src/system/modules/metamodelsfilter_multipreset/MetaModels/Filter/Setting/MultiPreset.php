@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The MetaModels extension allows the creation of multiple collections of custom items,
  * each with its own unique set of selectable attributes, with attribute extendability.
@@ -6,33 +7,30 @@
  * data in each collection.
  *
  * PHP version 5
- * @package	   MetaModels
- * @subpackage Interfaces
- * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
- * @copyright  The MetaModels team.
- * @license    LGPL.
+ * @package MetaModels
+ * @subpackage FilterMultiPreset
+ * @author Christopher Bölter <c.boelter@cogizz.de>
+ * @copyright cogizz - digital communications
+ * @license LGPL.
  * @filesource
  */
 
 namespace MetaModels\Filter\Setting;
 
-use MetaModels\FrontendIntegration\FrontendFilterOptions;
 use MetaModels\IItem;
+use MetaModels\Filter\Filter;
 use MetaModels\Filter\IFilter;
 use MetaModels\Filter\Rules\StaticIdList as FilterRuleStaticIdList;
-use MetaModels\Filter\Rules\SearchAttribute as FilterRuleSimpleLookup;
-use MetaModels\Render\Setting\ICollection as IRenderSettings;
 use MetaModels\Filter\Rules\SearchAttribute;
 use MetaModels\Filter\Rules\Condition\ConditionOr;
-use MetaModels\Filter\Filter;
 
 /**
- * Filter setting implementation performing a search for a value on a
+ * Filter setting implementation performing a search for presetted multiple values on a
  * configured attribute.
  *
- * @package	   MetaModels
- * @subpackage Core
- * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
+ * @package MetaModels
+ * @subpackage FilterMultiPreset
+ * @author Christopher Bölter <c.boelter@cogizz.de>
  */
 class MultiPreset extends Simple
 {
@@ -63,9 +61,9 @@ class MultiPreset extends Simple
 		{
 			$arrFilterValue = $arrFilterUrl[$strParam];
 
-			if ($arrFilterValue)
+			if ($arrFilterValue && is_array($arrFilterValue))
 			{
-				if(is_array($arrFilterValue) && count($arrFilterValue) > 1)
+				if(count($arrFilterValue) > 1)
 				{
 					$objParentRule = new ConditionOr();
 
@@ -83,11 +81,8 @@ class MultiPreset extends Simple
 					return;
 				}
 			}
-
-
-			$objFilter->addFilterRule(new FilterRuleStaticIdList(NULL));
-			return;
 		}
+
 		// either no attribute found or no match in url, do not return anything.
 		$objFilter->addFilterRule(new FilterRuleStaticIdList(array()));
 	}
@@ -108,6 +103,7 @@ class MultiPreset extends Simple
 		$objAttribute = $this->getMetaModel()->getAttributeById($this->get('attr_id'));
 		$arrOptions = $objAttribute->getFilterOptions(NULL, true);
 
+		// add a blank option to the multiple select
 		array_insert($arrOptions, 0, array(
 			'' => '-'
 		));
@@ -116,8 +112,8 @@ class MultiPreset extends Simple
 			$this->getParamName() => array
 			(
 				'label'   => array(
-					sprintf($GLOBALS['TL_LANG']['MSC']['metamodel_filtersettings_parameter']['simplelookup'][0], $objAttribute->getName()),
-					sprintf($GLOBALS['TL_LANG']['MSC']['metamodel_filtersettings_parameter']['simplelookup'][1], $objAttribute->getName())
+					sprintf($GLOBALS['TL_LANG']['MSC']['metamodel_filtersettings_parameter']['multipreset'][0], $objAttribute->getName()),
+					sprintf($GLOBALS['TL_LANG']['MSC']['metamodel_filtersettings_parameter']['multipreset'][1], $objAttribute->getName())
 				),
 				'inputType'    => 'select',
 				'options' => $arrOptions,
