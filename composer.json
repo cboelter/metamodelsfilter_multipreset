@@ -27,7 +27,7 @@
     },
 	"autoload": {
 		"psr-0": {
-			"MetaModels": "src/system/modules/metamodelsfilter_selectyear"
+			"MetaModels": "src/system/modules/metamodelsfilter_multipreset"
 		}
 	},
     "extra":{
