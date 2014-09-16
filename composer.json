@@ -20,19 +20,24 @@
         "php":">=5.3",
         "contao/core": ">=3.1,<4.0",
         "contao-community-alliance/composer-installer": "*",
-        "metamodels/core":"~1"
-    },
+		"metamodels/core":"~2.0.0"
+	},
     "conflict": {
         "contao/core": "3.0.*"
     },
-    "autoload": {
-        "classmap": ["src"]
-    },
+	"autoload": {
+		"psr-0": {
+			"MetaModels": "src/system/modules/metamodelsfilter_selectyear"
+		}
+	},
     "extra":{
         "contao": {
             "symlinks":{
                 "src/system/modules/metamodelsfilter_multipreset":"system/modules/metamodelsfilter_multipreset"
             }
-        }
+        },
+		"branch-alias": {
+			"dev-master": "2.0.x-dev"
+		}
     }
 }
