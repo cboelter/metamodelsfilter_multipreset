@@ -1,43 +1,49 @@
 {
-    "name":"cogizz/metamodelsfilter_multipreset",
-    "description":"MetaModels multipreset filter that allows to choose multiple entries in the content elemente / module",
-    "keywords":["contao", "metamodels", "filter", "multipreset"],
-    "type":"contao-module",
-    "license":"LGPL-3.0+",
-    "authors":[
-        {
-            "name":"Christopher Bölter",
-            "email":"info@cogizz.de",
-            "homepage":"http://www.cogizz.de",
-            "role":"Developer"
-        }
-    ],
-    "support":{
-        "issues":"https://github.com/cogizz/metamodelsfilter_multipreset/issues",
-        "source":"https://github.com/cogizz/metamodelsfilter_multipreset"
-    },
-    "require":{
-        "php":">=5.3",
-        "contao/core": ">=3.1,<4.0",
-        "contao-community-alliance/composer-installer": "*",
-		"metamodels/core":"~2.0.0"
-	},
-    "conflict": {
-        "contao/core": "3.0.*"
-    },
-	"autoload": {
-		"psr-0": {
-			"MetaModels": "src/system/modules/metamodelsfilter_multipreset"
-		}
-	},
-    "extra":{
-        "contao": {
-            "symlinks":{
-                "src/system/modules/metamodelsfilter_multipreset":"system/modules/metamodelsfilter_multipreset"
-            }
-        },
-		"branch-alias": {
-			"dev-master": "2.0.x-dev"
-		}
+  "name": "cogizz/metamodelsfilter_multipreset",
+  "description": "MetaModels multipreset filter that allows to choose multiple entries in the content elemente / module",
+  "keywords": [
+    "contao",
+    "metamodels",
+    "filter",
+    "multipreset"
+  ],
+  "type": "contao-module",
+  "license": "LGPL-3.0+",
+  "authors": [
+    {
+      "name": "Christopher Bölter",
+      "email": "info@cogizz.de",
+      "homepage": "http://www.cogizz.de",
+      "role": "Developer"
     }
+  ],
+  "support": {
+    "issues": "https://github.com/cogizz/metamodelsfilter_multipreset/issues",
+    "source": "https://github.com/cogizz/metamodelsfilter_multipreset"
+  },
+  "require": {
+    "php": ">=5.3",
+    "contao/core": ">=3.5,<4.0",
+    "contao-community-alliance/composer-installer": "*",
+    "metamodels/core": "~2.0.0"
+  },
+  "conflict": {
+    "contao/core": "3.4.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "MetaModels\\Filter\\Setting": "src"
+    }
+  },
+  "extra": {
+    "contao": {
+      "symlinks": {
+        "contao": "system/modules/metamodelsfilter_multipreset"
+      }
+    },
+    "branch-alias": {
+      "dev-master": "2.0.x-dev",
+      "dev-develop": "2.1.x-dev"
+    }
+  }
 }
