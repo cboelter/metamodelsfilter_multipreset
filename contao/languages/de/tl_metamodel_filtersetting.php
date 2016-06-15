@@ -7,11 +7,12 @@
  * data in each collection.
  *
  * PHP version 5
- * @package MetaModels
+ *
+ * @package    MetaModels
  * @subpackage FilterMultiPreset
- * @author Christopher Bölter <c.boelter@cogizz.de>
- * @copyright cogizz - digital communications
- * @license LGPL.
+ * @author     Christopher Bölter <metamodels@boelter.eu>
+ * @copyright  Christopher Bölter 2016
+ * @license    LGPL.
  * @filesource
  */
 

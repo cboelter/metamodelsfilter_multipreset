@@ -10,8 +10,8 @@
  *
  * @package    MetaModels
  * @subpackage FilterMultiPreset
- * @author     Christopher Bölter <c.boelter@cogizz.de>
- * @copyright  cogizz - digital communications
+ * @author     Christopher Bölter <metamodels@boelter.eu>
+ * @copyright  Christopher Bölter 2016
  * @license    LGPL.
  * @filesource
  */
@@ -31,7 +31,7 @@ use MetaModels\Filter\Rules\Condition\ConditionOr;
  *
  * @package    MetaModels
  * @subpackage FilterMultiPreset
- * @author     Christopher Bölter <c.boelter@cogizz.de>
+ * @author     Christopher Bölter <metamodels@boelter.eu>
  */
 class MultiPreset extends Simple
 {

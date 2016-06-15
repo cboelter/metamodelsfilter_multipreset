@@ -1,5 +1,5 @@
 {
-  "name": "cogizz/metamodelsfilter_multipreset",
+  "name": "cboelter/metamodelsfilter_multipreset",
   "description": "MetaModels multipreset filter that allows to choose multiple entries in the content elemente / module",
   "keywords": [
     "contao",
@@ -12,20 +12,22 @@
   "authors": [
     {
       "name": "Christopher Bölter",
-      "email": "info@cogizz.de",
-      "homepage": "http://www.cogizz.de",
+      "email": "metamodels@boelter.eu",
       "role": "Developer"
     }
   ],
   "support": {
-    "issues": "https://github.com/cogizz/metamodelsfilter_multipreset/issues",
-    "source": "https://github.com/cogizz/metamodelsfilter_multipreset"
+    "issues": "https://github.com/cboelter/metamodelsfilter_multipreset/issues",
+    "source": "https://github.com/cboelter/metamodelsfilter_multipreset"
   },
   "require": {
     "php": ">=5.3",
     "contao/core": ">=3.5,<4.0",
     "contao-community-alliance/composer-installer": "*",
     "metamodels/core": "~2.0.0"
+  },
+  "require-dev": {
+    "phpcq/all-tasks": "1.1.0"
   },
   "conflict": {
     "contao/core": "3.4.0"
@@ -45,5 +47,7 @@
       "dev-master": "2.0.x-dev",
       "dev-develop": "2.1.x-dev"
     }
-  }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }

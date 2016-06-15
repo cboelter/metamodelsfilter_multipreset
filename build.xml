@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This project is using the PHP code quality project (PHPCQ).
+
+For documentation visit:
+  https://github.com/phpcq/phpcq
+
+-->
+<project name="cboelter/metamodelsfilter_multipreset" default="build">
+    <import file="vendor/phpcq/phpcq/phpcq.main.xml"/>
+
+    <!-- Build targets from here on. -->
+    <target
+            name="build"
+            depends="verify, analyze"
+            description="Do a full build"
+            />
+
+    <target
+            name="verify"
+            depends="
+            phplint,
+            composer-validate,
+            autoload-validation,
+            author-validation"
+            description="Verify the quality of the code"
+            />
+
+    <target
+            name="analyze"
+            depends="
+            phploc,
+            pdepend,
+            phpmd,
+            phpcs,
+            phpcpd,
+            phpunit,
+            phpspec,
+            branch-alias-validation"
+            description="Do static analysis of the code"
+            />
+    <!--
+        <target
+            name="docs"
+            depends="phpdoc, phpcb, htaccess, copysvg, copybuild"
+        />
+    -->
+</project>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The MetaModels extension allows the creation of multiple collections of custom items,
  * each with its own unique set of selectable attributes, with attribute extendability.
@@ -8,9 +9,9 @@
  * PHP version 5
  *
  * @package    MetaModels
- * @subpackage FilterSelect
- * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
- * @copyright  The MetaModels team.
+ * @subpackage FilterMultiPreset
+ * @author     Christopher Bölter <metamodels@boelter.eu>
+ * @copyright  Christopher Bölter 2016
  * @license    LGPL.
  * @filesource
  */
